@@ -16,7 +16,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Install firebase
         run: npm install -g firebase-tools
-      - name: Login
+      - name: Initialize
         run: |
-          firebase login:ci
+          firebase init --token { FIREBASE_TOKEN }
+      - name: deploy
+        run: |
+          firebase deploy --only hosting:etcetra7n
           
